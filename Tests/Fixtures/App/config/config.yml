@@ -1,0 +1,20 @@
+imports:
+    - { resource: parameters.yml }
+
+framework:
+    secret: StocarulFacebookBundle
+    router: { resource: "%kernel.root_dir%/config/routing.yml" }
+    templating: { engines: ['twig'] }
+    form: false
+    csrf_protection: false
+    default_locale: en
+    translator: { fallback: en }
+    profiler: { only_exceptions: false }
+    test: ~
+    session:
+        storage_id: session.storage.filesystem
+
+stocarul_facebook:
+    oauth:
+        app_id: %oauth_app_id%
+        app_secret: %oauth_app_secret%
