@@ -1,0 +1,9 @@
+parameters:
+    stocarul_facebook.service.class: Stocarul\FacebookBundle\Service\FacebookService
+
+services:
+    stocarul_facebook.service:
+        class: %stocarul_facebook.service.class%
+        arguments:
+            - %stocarul_facebook.oauth.app_id%
+            - %stocarul_facebook.oauth.app_secret%
