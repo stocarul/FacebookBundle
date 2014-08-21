@@ -2,6 +2,7 @@ FacebookBundle
 ==============
 
 [![Build Status](https://travis-ci.org/stocarul/FacebookBundle.svg?branch=master)](https://travis-ci.org/stocarul/FacebookBundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/9eb8fea6-cd47-4ea0-9332-de37549a2e4c/mini.png)](https://insight.sensiolabs.com/projects/9eb8fea6-cd47-4ea0-9332-de37549a2e4c)
 
 ## Installation
 
