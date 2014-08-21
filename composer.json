@@ -18,13 +18,12 @@
 
     "require" : {
         "php": ">=5.4.0",
-        "sensio/framework-extra-bundle": "~3.0",
+        "symfony/framework-bundle": "~2.2",
         "guzzlehttp/guzzle": "~4.0",
         "facebook/php-sdk-v4" : "4.0.*"
     },
 
     "require-dev": {
-        "symfony/framework-bundle": "~2.2",
         "symfony/security-bundle": "~2.2",
         "symfony/twig-bundle": "~2.2",
         "symfony/finder": "~2.2",
