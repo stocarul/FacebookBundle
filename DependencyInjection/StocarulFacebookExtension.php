@@ -32,6 +32,11 @@ class StocarulFacebookExtension extends Extension
             $config['oauth']['app_secret']
         );
 
+        $container->setParameter(
+            'stocarul_facebook.oauth.app_token',
+            $config['oauth']['app_token']
+        );
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }

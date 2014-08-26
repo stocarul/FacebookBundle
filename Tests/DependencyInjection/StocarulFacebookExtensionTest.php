@@ -79,15 +79,15 @@ class StocarulFacebookExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * testLoadPass
+     * testLoadPassWithoutToken
      *
      */
-    public function testLoadPass()
+    public function testLoadPassWithoutToken()
     {
         $configs = array(
             'stocarul_facebook' => array(
                 'oauth' => array(
-                    'app_id' => 'test_app_id',
+                    'app_id'     => 'test_app_id',
                     'app_secret' => 'test_app_secret',
                 ),
             ),
@@ -114,6 +114,64 @@ class StocarulFacebookExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             'test_app_secret',
             $container->getParameter('stocarul_facebook.oauth.app_secret')
+        );
+
+        $this->assertTrue(
+            $container->hasParameter('stocarul_facebook.oauth.app_token'),
+            'The stocarul_facebook.oauth.app_token parameter is missing'
+        );
+        $this->assertEquals(
+            null,
+            $container->getParameter('stocarul_facebook.oauth.app_token')
+        );
+    }
+
+    /**
+     * testLoadPassWithToken
+     *
+     */
+    public function testLoadPassWithToken()
+    {
+        $configs = array(
+            'stocarul_facebook' => array(
+                'oauth' => array(
+                    'app_id'     => 'test_app_id',
+                    'app_secret' => 'test_app_secret',
+                    'app_token'  => 'test_app_token',
+                ),
+            ),
+        );
+
+        $container = $this->getContainerBuilder();
+        $extension = $this->getExtension();
+
+        $extension->load($configs, $container);
+
+        $this->assertTrue(
+            $container->hasParameter('stocarul_facebook.oauth.app_id'),
+            'The stocarul_facebook.oauth.app_id parameter is missing'
+        );
+        $this->assertEquals(
+            'test_app_id',
+            $container->getParameter('stocarul_facebook.oauth.app_id')
+        );
+
+        $this->assertTrue(
+            $container->hasParameter('stocarul_facebook.oauth.app_secret'),
+            'The stocarul_facebook.oauth.app_secret parameter is missing'
+        );
+        $this->assertEquals(
+            'test_app_secret',
+            $container->getParameter('stocarul_facebook.oauth.app_secret')
+        );
+
+        $this->assertTrue(
+            $container->hasParameter('stocarul_facebook.oauth.app_token'),
+            'The stocarul_facebook.oauth.app_token parameter is missing'
+        );
+        $this->assertEquals(
+            'test_app_token',
+            $container->getParameter('stocarul_facebook.oauth.app_token')
         );
     }
 

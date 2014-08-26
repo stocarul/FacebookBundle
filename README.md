@@ -39,4 +39,5 @@ stocarul_facebook:
     oauth:
         app_id:       your_app_id
         app_secret:   your_app_secret
+        app_token:    your_app_token
 ```

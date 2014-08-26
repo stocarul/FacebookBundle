@@ -33,9 +33,9 @@ class FacebookService
     }
 
     /**
-     * Set facebookSession
+     * Set accessToken
      *
-     * @param FacebookSession $facebookSession
+     * @param string $accessToken
      */
     public function setAccessToken($accessToken)
     {
