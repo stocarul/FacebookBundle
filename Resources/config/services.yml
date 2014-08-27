@@ -8,4 +8,4 @@ services:
             - %stocarul_facebook.oauth.app_id%
             - %stocarul_facebook.oauth.app_secret%
         calls:
-            - [setAccessToken, [%stocarul_facebook.oauth.app_token]]
+            - [setAccessToken, [%stocarul_facebook.oauth.app_token%]]
